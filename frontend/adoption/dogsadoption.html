@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dog Adoption Centers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe5b4, #fff0f5, #e6f7ff);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff9966, #ff5e62);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      background-color: #ff9966;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ff5e62;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ff5e62;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .center-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      transition: transform 0.3s;
+    }
+
+    .center-card:hover {
+      transform: scale(1.03);
+    }
+
+    .center-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .center-card h3 {
+      margin-top: 10px;
+      color: #ff5e62;
+    }
+
+    .center-card p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      background: linear-gradient(90deg, #ff9966, #ff5e62);
+      color: white;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .learn-section, .adopt-section {
+      display: none;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .back-btn {
+      background-color: #ff9966;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    .back-btn:hover {
+      background-color: #ff5e62;
+    }
+
+    button {
+      background-color: #ff9966;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff5e62;
+    }
+  </style>
+</head>
+<body>
+  <header>🐶 Dog Adoption Centers</header>
+
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('learn')">Learn More</a>
+    <a href="#" onclick="showSection('adopt')">Adopt Now</a>
+  </nav>
+
+  <div id="home" class="container">
+    <h2>Find Your New Best Friend 🐾</h2>
+    <p>Looking to adopt a loving companion? Here are some trusted adoption centers that help dogs find caring homes.</p>
+
+    <div class="center-card">
+      <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg">
+      <h3>Happy Tails Adoption Center</h3>
+      <p>Location: Hyderabad | Contact: 9876543210 | Email: info@happytails.in</p>
+    </div>
+
+    <div class="center-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZKTKRxs7vcQl69aefwMp3Y8oCBVJl4oE86g&s">
+      <h3>Paws Shelter & Care</h3>
+      <p>Location: Bangalore | Contact: 9123456780 | Email: care@pawsshelter.org</p>
+    </div>
+
+    <div class="center-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkV7dhpzh5n6cEIQPZTwpGiT4mUuSaayvL3eCwOx4bqVA66F8HZLQvn_M52WiDOTKWdgM&usqp=CAU">
+      <h3>Second Chance Dogs Foundation</h3>
+      <p>Location: Chennai | Contact: 9345678123 | Email: adopt@secondchance.org</p>
+    </div>
+
+    <button onclick="showSection('learn')">Learn More</button>
+    <button onclick="showSection('adopt')">Adopt Now</button>
+  </div>
+
+  <!-- Learn More Section -->
+  <div id="learn" class="learn-section">
+    <h2>Why Adopt? ❤️</h2>
+    <p>Adopting a dog not only saves a life but brings immense joy and love into your home. Adoption centers ensure all dogs are vaccinated, groomed, and socialized before adoption.</p>
+    <h3>Benefits of Adoption</h3>
+    <ul style="list-style:none; line-height:1.8; color:#444;">
+      <li>🐾 Gives stray and abandoned dogs a second chance.</li>
+      <li>💉 Dogs are vaccinated and health-checked.</li>
+      <li>🏠 Support ethical, responsible pet ownership.</li>
+    </ul>
+    <a class="back-btn" href="#" onclick="showSection('home')">Back to Home</a>
+  </div>
+
+  <!-- Adopt Now Section -->
+  <div id="adopt" class="adopt-section">
+    <h2>Adoption Form 🐕</h2>
+    <form onsubmit="return showThankYou()" style="max-width:400px;margin:auto;text-align:left;">
+      <label>Name:</label><br>
+      <input type="text" required style="width:100%;padding:8px;margin-bottom:10px;"><br>
+      <label>Phone:</label><br>
+      <input type="tel" required style="width:100%;padding:8px;margin-bottom:10px;"><br>
+      <label>Preferred Breed:</label><br>
+      <input type="text" style="width:100%;padding:8px;margin-bottom:10px;"><br>
+      <label>Why do you want to adopt?</label><br>
+      <textarea required style="width:100%;padding:8px;margin-bottom:10px;"></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="thanks" style="color:green;font-weight:bold;margin-top:15px;display:none;">Thank you! We'll contact you soon. 🐶</p>
+    <a class="back-btn" href="#" onclick="showSection('home')">Back to Home</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Dog Adoption Centers | Adopt, Don't Shop ❤️
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('learn').style.display = 'none';
+      document.getElementById('adopt').style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function showThankYou() {
+      document.getElementById('thanks').style.display = 'block';
+      return false;
+    }
+
+    showSection('home');
+  </script>
+</body>
+</html>

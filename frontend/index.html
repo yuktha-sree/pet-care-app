@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Care Resources</title>
+<style>
+/* Global Styles */
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
+header { background:#008CBA; color:white; padding:15px; text-align:center; }
+nav button { margin:5px; padding:8px 12px; border:none; border-radius:5px; background:white; color:#008CBA; cursor:pointer; }
+nav button.active { background:#005f7f; color:white; }
+nav button:hover { background:#005f7f; color:white; }
+main { padding:20px; text-align:center; }
+section { display:none; }
+section.active { display:block; }
+footer { text-align:center; background:#333; color:white; padding:10px; margin-top:30px; }
+
+/* Home Page Clouds */
+.pet-clouds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.pet-cloud {
+  background: #00aaff22;
+  border: 2px solid #008CBA;
+  border-radius: 25px;
+  padding: 15px;
+  min-width: 150px;
+  max-width: 200px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+.pet-cloud:hover { transform: scale(1.05); background: #008CBA22; }
+
+/* Adoption & Services Cards */
+.card-container, .services-container, .bubble-container { 
+  display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px; 
+}
+.card, .service-card, .bubble { 
+  background:white; border-radius:15px; box-shadow:0 0 10px rgba(0,0,0,0.1); 
+  width:250px; padding:15px; text-align:left; 
+}
+.card img, .service-card img { width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px; }
+.service-card h3, .bubble h3 { text-align:center; color:#008CBA; margin-bottom:10px; }
+.service-card ul, .bubble ul { padding-left:20px; }
+.service-card ul li, .bubble ul li { margin-bottom:5px; }
+
+/* Bubble boxes for vet & food */
+.bubble { background:#008CBA11; border:2px solid #008CBA; transition: transform 0.2s; }
+.bubble:hover { transform: scale(1.05); background:#008CBA22; }
+
+/* Bubble text style */
+.bubble h3 { font-size:1.1em; }
+.bubble ul li { font-size:0.9em; }
+
+/* Responsive adjustments */
+@media(max-width:600px){
+  .card, .service-card, .bubble { width:90%; }
+}
+</style>
+<nav>
+  <button onclick="window.location.href='login.html'">Login</button>
+  <button onclick="window.location.href='logout.html'">Logout</button>
+</nav>
+</head>
+<body>
+
+<header>
+<h1>🐾 Pet Care Resources</h1>
+<nav>
+<button class="active" onclick="showSection('home', this)">Home</button>
+<button onclick="showSection('adoption', this)">Adoption Centers</button>
+<button onclick="showSection('services', this)">Services</button>
+<button onclick="showSection('vet', this)">Veterinary Info</button>
+<button onclick="showSection('food', this)">Food Guidance</button>
+</nav>
+</header>
+
+<main>
+<!-- Home Section -->
+<section id="home" class="active">
+<h2>Welcome to Pet Care Resources</h2>
+<p>Your one-stop platform for all pet-related needs — from adoption to veterinary help, services, and food guidance.</p>
+<h3>Most Popular Pets</h3>
+<div class="pet-clouds">
+  <div class="pet-cloud">
+<img src="https://tse2.mm.bing.net/th/id/OIP.w-rHWqtBww8a6Cv424Le0AHaFj?pid=Api&P=0&h=180"
+alt="dog" style="width:150px; height:auto; display:block; margin:0 auto 10px;">
+<a href="doginfo.html"></a>
+ 🐶 Dogs<br>Loyal, friendly, great companions, provide security, and easily trained.</div>
+  <div class="pet-cloud">
+<img src="https://www.petage.com/wp-content/uploads/2019/09/Depositphotos_74974941_xl-2015-e1569443284386.jpg"
+alt="dog" style="width:150px; height:auto; display:block; margin:0 auto 10px;">
+<a href="catinfo.html"></a>
+🐱 Cats<br>Independent, low maintenance, affectionate, and playful.</div>
+  <div class="pet-cloud">
+<img src="https://4animalmagnetism.com/wp-content/uploads/2019/03/fish-1080x675.jpeg"
+alt="dog" style="width:150px; height:auto; display:block; margin:0 auto 10px;">
+<a href="fishinfo.html"></a>
+🐠 Fish<br>Beautiful to watch, calming, and easy to care for with proper setup.</div>
+  <div class="pet-cloud">
+<img src="https://www.hepper.com/wp-content/uploads/2023/03/conure-bird-perched-on-the-finger-of-its-owner_TigerStocks_Shutterstock.jpg"
+alt="dog" style="width:150px; height:auto; display:block; margin:0 auto 10px;">
+<a href="birdinfo.html"></a>
+🐦 Birds<br>Colorful, intelligent, can mimic sounds or talk, and social.</div>
+  <div class="pet-cloud">
+<img src="https://tse1.mm.bing.net/th/id/OIP.0MCsAkUslCPKb7yDmvFfqAHaE8?pid=Api&P=0&h=180"
+alt="dog" style="width:150px; height:auto; display:block; margin:0 auto 10px;">
+<a href="rabbitinfo.html"></a>
+🐇 Rabbits<br>Gentle, quiet, and easy to keep indoors; kids love them.</div>
+</div>
+</section>
+
+<!-- Adoption Section -->
+<section id="adoption">
+<h2>Adoption Centers & Pet Details</h2>
+<div class="card-container">
+  <div class="card">
+    <a href="adoption/dogsadoption.html">
+      <img src="https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_1280.jpg" alt="Dog">
+      <h3>Dogs 🐶</h3>
+    </a>
+   <a href="dog-adoption.html"></a>
+
+    <p><b>Center:</b> Paws Rescue Center</p>
+    <p><b>Location:</b> Hyderabad</p>
+    <p><b>Contact:</b> +91 9876543210</p>
+    <p>Loyal, friendly, great companions, provide security, and easily trained.</p>
+  </div>
+    <a href="adoption/catsadoption.html">
+      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Cat">
+      <h3>Cats 🐱</h3>
+    </a>
+    <p><b>Center:</b> Happy Tails Shelter</p>
+    <a href="catsadoption.html"></a>
+    <p><b>Center:</b> Happy Tails Shelter</p>
+    <p><b>Location:</b> Chennai</p>
+    <p><b>Contact:</b> +91 8765432109</p>
+    <p>Independent, low maintenance, affectionate, and playful.</p>
+    <a href="adoption/fishadoption.html">
+     <img src="https://wallpapers.com/images/featured-full/fish-pictures-p95zeoypc38u7nir.jpg" alt="Fish">
+      <h3>Fish 🐠</h3>
+    </a>
+    <p><b>Center:</b> Aqua World</p>
+    <a href="fishesadoption.html">></a>
+    <p><b>Center:</b> Aqua World</p>
+    <p><b>Location:</b> Mumbai</p>
+    <p><b>Contact:</b> +91 9988776655</p>
+    <p>Beautiful to watch, calming, and easy to care for with proper setup.</p>
+  </div>
+  <div class="card">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.g4A3BVbzYS7xP3tCwJYIpAHaE8?pid=Api&P=0&h=180" alt="Bird">
+    <h3>Birds 🐦</h3>
+    <a href="birdsadoption.html"></a>
+    <p><b>Center:</b> Feather Friends</p>
+    <p><b>Location:</b> Bangalore</p>
+    <p><b>Contact:</b> +91 8877665544</p>
+    <p>Colorful, intelligent, can mimic sounds or talk, and social.</p>
+  </div>
+  <div class="card">
+    <img src="https://www.thesprucepets.com/thmb/fCJyE3xJ9iAJ1JpX1pyEYrycFLE=/5220x3480/filters:fill(auto,1)/young-dwarf-rabbits-136491393-5c0da04d46e0fb0001b9c425.jpg" alt="Rabbit">
+    <h3>Rabbits 🐇</h3>
+    <a href="rabbitsadoption.html"></a>
+    <p><b>Center:</b> Bunny Haven</p>
+    <p><b>Location:</b> Pune</p>
+    <p><b>Contact:</b> +91 9988771122</p>
+    <p>Gentle, quiet, and easy to keep indoors; kids love them.</p>
+  </div>
+</div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+<h2>Services Offered for Popular Pets</h2>
+<div class="services-container">
+  <div class="service-card">
+    <h3>Dogs 🐶</h3>
+    <img src="https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_1280.jpg" alt="Dog">
+    <ul>
+      <li>Adoption Services: Rescue shelters, foster programs.</li>
+      <li>Veterinary Services: Vaccinations, neutering/spaying, routine checkups, emergency care.</li>
+      <li>Grooming Services: Bathing, hair trimming, nail clipping, ear cleaning.</li>
+      <li>Training Services: Obedience, behavioral correction, agility classes.</li>
+      <li>Pet Boarding / Daycare: Safe stay for pets while owners are away.</li>
+      <li>Food & Nutrition Guidance: Breed-specific diets, weight management, puppy/elderly care.</li>
+    </ul>
+  </div>
+  <div class="service-card">
+    <h3>Cats 🐱</h3>
+    <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Cat">
+    <ul>
+      <li>Adoption Services: Shelter adoption, foster care programs.</li>
+      <li>Veterinary Services: Vaccinations, spaying/neutering, flea/tick control, emergency care.</li>
+      <li>Grooming Services: Nail trimming, brushing, bath (if needed).</li>
+      <li>Behavioral & Training Services: Litter training, scratching post guidance.</li>
+      <li>Pet Boarding / Sitting: Daycare or temporary stay.</li>
+      <li>Food & Nutrition Guidance: Age-specific diets, special dietary needs.</li>
+    </ul>
+  </div>
+  <div class="service-card">
+    <h3>Fish 🐠</h3>
+     <img src="https://wallpapers.com/images/featured-full/fish-pictures-p95zeoypc38u7nir.jpg" alt="Fish">
+    <ul>
+      <li>Adoption / Sale Services: Aquarium stores, rescue programs.</li>
+      <li>Veterinary Services: Fish health checkups, parasite treatment.</li>
+      <li>Aquarium Setup Services: Tank installation, water filtration, plants & decoration setup.</li>
+      <li>Water Testing & Maintenance: pH, ammonia, nitrate/nitrite monitoring.</li>
+      <li>Food & Nutrition Guidance: Species-specific diets, feeding frequency, supplements.</li>
+    </ul>
+  </div>
+  <div class="service-card">
+    <h3>Birds 🐦</h3>
+     <img src="https://tse3.mm.bing.net/th/id/OIP.g4A3BVbzYS7xP3tCwJYIpAHaE8?pid=Api&P=0&h=180" alt="Bird">
+    <ul>
+      <li>Adoption / Sale Services: Rescue centers, bird breeders.</li>
+      <li>Veterinary Services: Wing trimming, beak & nail care, vaccinations, disease management.</li>
+      <li>Cage & Habitat Setup Services: Proper cages, perches, toys, and hygiene maintenance.</li>
+      <li>Food & Nutrition Guidance: Seed mixes, pellets, fresh fruits/vegetables.</li>
+    </ul>
+  </div>
+  <div class="service-card">
+    <h3>Rabbits 🐇</h3>
+    <img src="https://www.thesprucepets.com/thmb/fCJyE3xJ9iAJ1JpX1pyEYrycFLE=/5220x3480/filters:fill(auto,1)/young-dwarf-rabbits-136491393-5c0da04d46e0fb0001b9c425.jpg" alt="Rabbit">
+    <ul>
+      <li>Adoption Services: Rabbit rescues, foster programs.</li>
+      <li>Veterinary Services: Vaccinations, neutering/spaying, health checkups.</li>
+      <li>Grooming Services: Nail trimming, brushing, occasional bathing.</li>
+      <li>Cage & Habitat Setup Services: Spacious indoor cages, bedding, hiding spots.</li>
+      <li>Food & Nutrition Guidance: Hay-based diets, vegetables, pellet food, fresh water.</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- Veterinary Info Section -->
+<section id="vet">
+<h2>Veterinary Info</h2>
+<div class="bubble-container">
+  <div class="bubble">
+    <h3>Dogs 🐶</h3>
+  <img src="https://tse4.mm.bing.net/th/id/OIP.sR0EFFI8O8xt982ZnCqCtQHaE8?pid=Api&P=0&h=180" 
+    alt="Dog" style="width:150px; height:auto; display:block; margin:0 auto 10px;">
+    <ul>
+        <li><a href="veternaryinfo.html" >Dog veterinary</a></li>
+      <li>Annual vaccinations: Rabies, DHPP, Bordetella</li>
+      <li>Regular health checkups</li>
+      <li>Parasite prevention: Flea, tick, heartworm</li>
+      <li>Emergency care tips and first aid</li>
+    </ul>
+  </div>
+  <div class="bubble">
+    <h3>Cats 🐱</h3>
+     <img src="https://img77.uenicdn.com/image/upload/v1503675925/category/veterinary_shutterstock_343140593_veterinary_cat_clinic_vet_exam_30s_and_animal_animals_care.jpg"
+       alt="Cat" style="width:150px; height:auto; display:block; margin:0 auto 10px;">   
+    <ul>
+      <li><a href="cats.html">Cat veterinary </a></li>
+      <li>Vaccinations: FVRCP, Rabies</li>
+      <li>Spaying/Neutering advice</li>
+      <li>Parasite control and grooming</li>
+      <li>Regular vet checkups</li>
+    </ul>
+  </div>
+  <div class="bubble">
+    <h3>Fish 🐠</h3>
+   <img src="https://cafishvet.com/wp-content/uploads/2023/01/fish-veterinarians-aquarium.jpg"
+       alt="Fish" style="width:150px; height:auto; display:block; margin:0 auto 10px;">  
+    <ul>
+         <li><a href="fish.html">Fish veterinary </a></li>
+      <li>Check water parameters regularly (pH, ammonia, nitrates)</li>
+      <li>Observe for diseases and parasites</li>
+      <li>Quarantine new fish before introduction</li>
+    </ul>
+  </div>
+  <div class="bubble">
+        <li><a href="file:///C:/Users/HP/AppData/Local/Microsoft/Windows/INetCache/IE/WIRSK0VE/birds[1].html" target="_blank" rel="noopener noreferrer">Open veterinary page</a></li>
+ <img src="https://tse1.mm.bing.net/th/id/OIP.G_YsK35iZ8LMQDJObTmYpQHaE8?pid=Api&P=0&h=180"
+       alt="Birds" style="width:150px; height:auto; display:block; margin:0 auto 10px;">  
+    <ul>
+        <li> <a href="file:///C:/Users/HP/AppData/Local/Microsoft/Windows/INetCache/IE/WIRSK0VE/birds[1].html" target="_blank" rel="noopener noreferrer"></a></li>
+      <li>Regular wing, beak, and nail trimming</li>
+      <li>Vaccinations and disease prevention</li>
+      <li>Clean cages frequently</li>
+    </ul>
+  </div>
+  <div class="bubble">
+        <li><a href="file:///C:/Users/HP/AppData/Local/Microsoft/Windows/INetCache/IE/T2USAIUN/rabbits[1].html"  target="_blank" rel="noopener noreferrer">Open veterinary page</a></li>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.8VFNxEIy3KWNnDEeOkPnLgAAAA?pid=Api&P=0&h=180"
+       alt="Rabbit" style="width:150px; height:auto; display:block; margin:0 auto 10px;">   
+    <ul>
+        <li><a href="file:///C:/Users/HP/AppData/Local/Microsoft/Windows/INetCache/IE/T2USAIUN/rabbits[1].html"  target="_blank" rel="noopener noreferrer"></a></li>
+      <li>Spaying/Neutering for health and behavior</li>
+      <li>Dental checkups</li>
+      <li>Vaccinations and parasite prevention</li>
+      <li>Regular vet checkups</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- Food Guidance Section -->
+<section id="food">
+<h2>Food & Nutrition Guidance</h2>
+<div class="bubble-container">
+  <div class="bubble">
+    <h3>Dogs 🐶</h3>
+ <img src="https://m.media-amazon.com/images/I/816M+CW1S-L.jpg"
+       alt="dog" style="width:150px; height:auto; display:block; margin:0 auto 10px;">   
+    <ul>
+        <li><a href="dogsfood.html">Dog Food</a></li>
+      <li>Balanced diet with proteins, carbs, and fats</li>
+      <li>Puppy vs adult food requirements</li>
+      <li>Healthy treats and weight control</li>
+    </ul>
+  </div>
+  <div class="bubble">
+    <h3>Cats 🐱</h3>
+ <img src="https://tse2.mm.bing.net/th/id/OIP.rcoPPLnGTu1Mb6SJZACzwwHaHa?pid=Api&P=0&h=180"
+       alt="cats" style="width:150px; height:auto; display:block; margin:0 auto 10px;">   
+    <ul>
+        <li><a href="catsfood.html">Cat Food</a></li>
+      <li>High-protein diet</li>
+      <li>Age-specific nutrition</li>
+      <li>Wet and dry food balance</li>
+    </ul>
+  </div>
+  <div class="bubble">
+    <h3>Fish 🐠</h3>
+ <img src="https://images-na.ssl-images-amazon.com/images/I/71AYfEfr5wS.SL1500.jpg"
+       alt="fish" style="width:150px; height:auto; display:block; margin:0 auto 10px;">   
+    <ul>
+        <li><a href="fishfood.html">Fish Food</a></li>
+      <li>Species-specific diets (flakes, pellets, live/frozen food)</li>
+      <li>Feed small amounts 2-3 times daily</li>
+      <li>Avoid overfeeding to maintain water quality</li>
+    </ul>
+  </div>
+  <div class="bubble">
+    <h3>Birds 🐦</h3>
+<img src="https://tse2.mm.bing.net/th/id/OIP.2qMvV1fAJ1ZZJ54S1b-tWQHaFc?pid=Api&P=0&h=180"
+       alt="birds" style="width:150px; height:auto; display:block; margin:0 auto 10px;"> 
+    <ul>
+        <li><a href="birdsfood.html">Bird Food</a></li>
+      <li>Seed mixes, pellets, fresh fruits/vegetables</li>
+      <li>Ensure clean water daily</li>
+      <li>Vitamin supplementation if needed</li>
+    </ul>
+  </div>
+  <div class="bubble">
+    <h3>Rabbits 🐇</h3>
+ <img src="https://tse1.mm.bing.net/th/id/OIP.nbN9pS8m8_Z9epFhxKs0vQHaE7?pid=Api&P=0&h=180"
+       alt="Rabbit" style="width:150px; height:auto; display:block; margin:0 auto 10px;">   
+    <ul>
+        <li><a href="rabbitfood.html">Rabbit Food</a></li>
+      <li>Hay-based diet is primary</li>
+      <li>Fresh vegetables daily</li>
+      <li>Small portion of pellets</li>
+      <li>Fresh water always</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<footer>
+<p>© 2025 Pet Care Resources. All rights reserved.</p>
+</footer>
+
+<script>
+function showSection(id, btn) {
+  // Hide all sections
+  document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
+  // Show selected section
+  document.getElementById(id).classList.add('active');
+  // Remove active from all buttons
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  // Set clicked button active
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
+
+
+
