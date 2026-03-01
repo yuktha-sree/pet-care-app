@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaCare — Fish Veterinary Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00b4d8;
+      --secondary: #90e0ef;
+      --accent: #48cae4;
+      --info: #caf0f8;
+      --bg: #e0f7fa;
+      --card: #ffffff;
+      --text: #023e8a;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 24px;
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--accent), var(--info));
+      border-radius: 16px;
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #0077b6;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #fff, #e0fbfc);
+      padding: 18px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    .bubble-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .bubble {
+      flex: 1;
+      min-width: 220px;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      color: var(--text);
+      padding: 14px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    button {
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .bubble-section {
+        flex-direction: column;
+      }
+    }
+
+    #booking-page, #learnmore-page {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      border-radius: 16px;
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HOME PAGE -->
+  <div class="container" id="main-page">
+    <div class="hero">
+      <h1>AquaCare Veterinary Services</h1>
+      <p>Expert and colorful aquatic care for your beautiful fish!</p>
+    </div>
+
+    <div class="services">
+      <div class="card">
+        <h3>Water Quality Testing</h3>
+        <p>Ensure the perfect environment with detailed aquarium water analysis.</p>
+      </div>
+      <div class="card">
+        <h3>Fish Disease Treatment</h3>
+        <p>Accurate diagnosis and treatment for common fish illnesses and infections.</p>
+      </div>
+      <div class="card">
+        <h3>Nutrition & Feeding</h3>
+        <p>Balanced feeding plans for different species and aquarium conditions.</p>
+      </div>
+      <div class="card">
+        <h3>Tank Setup Consultation</h3>
+        <p>Get expert advice on aquascaping, filtration, and habitat maintenance.</p>
+      </div>
+      <div class="card">
+        <h3>Emergency Care</h3>
+        <p>24/7 care for critical conditions in aquarium and pond fish.</p>
+      </div>
+    </div>
+
+    <div class="bubble-section">
+      <div class="bubble">
+        <h4>Clinic Hours</h4>
+        <p>Mon–Sat: 10 AM – 6 PM<br>Sun: 11 AM – 4 PM</p>
+      </div>
+      <div class="bubble">
+        <h4>Contact Us</h4>
+        <p>Call: +91 90909 80808<br>Email: contact@aquacare.com</p>
+      </div>
+      <div class="bubble">
+        <h4>Doctor Info</h4>
+        <p>Dr. Rajiv Menon, M.F.Sc<br>8+ years in aquatic veterinary science</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:25px;">
+      <button onclick="openBooking()">Book Appointment</button>
+      <button onclick="openLearnMore()">Learn More</button>
+    </div>
+
+    <footer>
+      <p>© <span id="year"></span> AquaCare Veterinary Clinic — All Rights Reserved</p>
+    </footer>
+  </div>
+
+  <!-- BOOKING PAGE -->
+  <div class="container" id="booking-page">
+    <h2>Book Your Fish's Appointment</h2>
+    <p>Fill in the details below to schedule your aquatic care visit.</p>
+    <form id="bookingForm" onsubmit="return confirmBooking(event)">
+      <input type="text" id="ownerName" placeholder="Owner's Name" required>
+      <input type="text" id="fishType" placeholder="Fish Type (e.g., Goldfish, Betta)" required>
+      <input type="tel" id="phone" placeholder="Contact Number" required>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option>Water Quality Test</option>
+        <option>Fish Disease Treatment</option>
+        <option>Feeding Consultation</option>
+        <option>Tank Setup Advice</option>
+        <option>Emergency Care</option>
+      </select>
+      <textarea id="notes" rows="3" placeholder="Additional Notes"></textarea>
+      <button type="submit">Confirm Booking</button>
+      <button type="button" onclick="goBack()">Back to Home</button>
+    </form>
+    <p id="confirmMsg"></p>
+  </div>
+
+  <!-- LEARN MORE PAGE -->
+  <div class="container" id="learnmore-page">
+    <h2>Learn More About AquaCare</h2>
+    <p>AquaCare is India’s leading aquatic veterinary center, dedicated to the health and well-being of your pet fish.</p>
+
+    <div class="services">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To improve the health of ornamental and commercial fish through professional veterinary care.</p>
+      </div>
+      <div class="card">
+        <h3>Our Expertise</h3>
+        <p>We specialize in treating diseases, nutrition advice, and maintaining aquarium ecosystems.</p>
+      </div>
+      <div class="card">
+        <h3>Fish Care Tips</h3>
+        <p>🐠 Change 20% of tank water weekly.<br>🌿 Avoid overfeeding.<br>💧 Use dechlorinated water.<br>🌡️ Maintain stable temperature.</p>
+      </div>
+      <div class="card">
+        <h3>Facilities</h3>
+        <p>Equipped with modern aquariums, lab testing for water parameters, and emergency care tanks.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:25px;">
+      <button onclick="goBack()">Back to Home</button>
+      <button onclick="openBooking()">Book Appointment</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openBooking() {
+      document.getElementById('main-page').style.display = 'none';
+      document.getElementById('learnmore-page').style.display = 'none';
+      document.getElementById('booking-page').style.display = 'block';
+    }
+
+    function openLearnMore() {
+      document.getElementById('main-page').style.display = 'none';
+      document.getElementById('booking-page').style.display = 'none';
+      document.getElementById('learnmore-page').style.display = 'block';
+    }
+
+    function goBack() {
+      document.getElementById('booking-page').style.display = 'none';
+      document.getElementById('learnmore-page').style.display = 'none';
+      document.getElementById('main-page').style.display = 'block';
+    }
+
+    function confirmBooking(event) {
+      event.preventDefault();
+      const owner = document.getElementById('ownerName').value;
+      const fish = document.getElementById('fishType').value;
+      const service = document.getElementById('service').value;
+      document.getElementById('confirmMsg').innerText = `Thank you ${owner}! Your ${service} appointment for ${fish} has been received.`;
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>

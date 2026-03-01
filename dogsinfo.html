@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogs</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f4f8; margin: 0; padding: 0;}
+        .container { max-width: 1100px; margin: 40px auto; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.10); border-radius: 10px; padding: 32px 36px;}
+        h1 { color: #184863; text-align: center; margin-bottom: 40px;}
+        .dogs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px;}
+        .dog-card { background: #edfaff; border-radius: 8px; box-shadow: 0 2px 7px rgba(0,0,0,0.08); padding: 18px; text-align: center; transition: box-shadow 0.2s;}
+        .dog-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.13);}
+        .dog-img { width: 100%; max-width: 210px; border-radius: 6px;}
+        .dog-name { font-size: 1.35em; font-weight: bold; color: #13488e; margin: 12px 0 4px 0;}
+        .dog-desc { font-size: 1em; color: #22516b; margin-bottom: 11px;}
+        .trained-badge { display: inline-block; background: #25c178; color: #fff; font-size: 0.90em; padding: 3px 15px; border-radius: 16px; margin-bottom: 8px;}
+        .info-btn { background: #137be3; color: #fff; text-decoration: none; padding: 11px 21px; border-radius: 24px; font-weight: 600; transition: background 0.18s; display: inline-block; margin-top: 11px; cursor: pointer; border: none;}
+        .info-btn:hover { background: #0c57a3;}
+        .contact-section { margin-top: 44px; text-align: center;}
+        .contact-info { background: #e3f2fd; padding: 16px 0; border-radius: 8px; font-size: 1.12em; margin-bottom: 18px;}
+        /* Details page styles */
+        .info-container { max-width: 570px; margin: 65px auto; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(20,40,72,0.15); padding: 50px 38px; text-align: center; display: none;}
+        .info-container.active { display: block;}
+        .back-btn { background: #137be3; color: #fff; padding: 13px 29px; border-radius: 25px; text-decoration: none; display: block; width: fit-content; margin: 33px auto 0 auto; font-weight: bold; font-size: 1em; transition: background 0.19s; border: none; cursor: pointer;}
+        .back-btn:hover { background: #0c57a3;}
+        .main-section.active { display: block;}
+        .main-section.inactive { display: none;}
+        img.info-img { max-width: 240px; border-radius: 10px; margin-bottom: 13px;}
+        @media (max-width:700px){ .container, .info-container {padding:10px 4px;} }
+    </style>
+</head>
+<body>
+    <!-- Main page -->
+    <div class="container main-section active" id="mainPage">
+        <h1>Dogs</h1>
+        <div class="dogs">
+            <div class="dog-card">
+                <img class="dog-img" src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Buddy the Labrador">
+                <div class="dog-name">Buddy</div>
+                <div class="trained-badge">Trained</div>
+                <div class="dog-desc">Energetic Labrador, social and loves playing fetch. Great with kids and other pets.</div>
+                <button class="info-btn" onclick="showDogInfo('buddy')">More Info</button>
+            </div>
+            <div class="dog-card">
+                <img class="dog-img" src="https://images.pexels.com/photos/4587977/pexels-photo-4587977.jpeg" alt="Lady the German Shepherd">
+                <div class="dog-name">Lady</div>
+                <div class="trained-badge">Trained</div>
+                <div class="dog-desc">Calm, loyal German Shepherd. Protective and very intelligent.</div>
+                <button class="info-btn" onclick="showDogInfo('lady')">More Info</button>
+            </div>
+            <div class="dog-card">
+                <img class="dog-img" src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg" alt="Max the Beagle">
+                <div class="dog-name">Max</div>
+                <div class="dog-desc">Playful Beagle, curious and very affectionate. Enjoys walks!</div>
+                <button class="info-btn" onclick="showDogInfo('max')">More Info</button>
+            </div>
+            <div class="dog-card">
+                <img class="dog-img" src="https://animatch.ca/cdn/shop/files/Rosie-2.jpg?v=1749508119&width=800">
+                <div class="dog-name">Rosie</div>
+                <div class="trained-badge">Trained</div>
+                <div class="dog-desc">Sweet-natured Golden Retriever, adapted to families. Well mannered.</div>
+                <button class="info-btn" onclick="showDogInfo('rosie')">More Info</button>
+            </div>
+            <div class="dog-card">
+                <img class="dog-img" src="https://images.pexels.com/photos/374906/pexels-photo-374906.jpeg" alt="Bella the Siberian Husky">
+                <div class="dog-name">Bella</div>
+                <div class="dog-desc">Siberian Husky, playful and loves to run. Beautiful coat and striking blue eyes.</div>
+                <button class="info-btn" onclick="showDogInfo('bella')">More Info</button>
+            </div>
+        </div>
+        <div class="contact-section">
+            <div class="contact-info">
+                📞 Contact for Adoption: <b>+91 98123 56789</b> <br>
+                ✉️ Email: <b>adopt@dogportal.com</b>
+            </div>
+        </div>
+    </div>
+    <!-- Dog info pages (all hidden initially) -->
+    <div id="buddy" class="info-container">
+        <img class="info-img" src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Buddy the Labrador">
+        <h2>Buddy (Labrador Retriever)</h2>
+        <p><b>Age:</b> 2 years</p>
+        <p><b>Gender:</b> Male</p>
+        <p><b>Breed:</b> Labrador Retriever</p>
+        <p><b>Description:</b> Buddy is an energetic and loving Lab who enjoys playing fetch. He's very social and gets along great with kids as well as other pets.</p>
+        <p><b>Behavior:</b> Very friendly, loves children and other animals, active and playful.</p>
+        <p><b>Training:</b> Knows basic commands ('sit', 'stay', 'fetch'), crate trained.</p>
+        <ul>
+            <li>Vaccinated</li>
+            <li>Microchipped</li>
+            <li>No known health issues</li>
+            <li>Favorite activity: Fetch with tennis balls</li>
+            <li>Special note: Very easy to train & loves treats</li>
+        </ul>
+        <button class="back-btn" onclick="goBack()">Back to Portal</button>
+    </div>
+    <div id="lady" class="info-container">
+        <img class="info-img" src="https://images.pexels.com/photos/4587977/pexels-photo-4587977.jpeg" alt="Lady the German Shepherd">
+        <h2>Lady (German Shepherd)</h2>
+        <p><b>Age:</b> 3 years</p>
+        <p><b>Gender:</b> Female</p>
+        <p><b>Breed:</b> German Shepherd</p>
+        <p><b>Description:</b> Lady is calm and loyal, protective and highly intelligent. She is ideal for homes needing a loving companion and a good guardian.</p>
+        <p><b>Behavior:</b> Loyal, protective, calm indoors, intelligent.</p>
+        <p><b>Training:</b> Advanced obedience, leash trained, understands 'stay', 'heel', 'guard'.</p>
+        <ul>
+            <li>Vaccinated</li>
+            <li>Microchipped</li>
+            <li>No known health issues</li>
+            <li>Favorite activity: Long walks</li>
+            <li>Special note: Bonds quickly with family</li>
+        </ul>
+        <button class="back-btn" onclick="goBack()">Back to Portal</button>
+    </div>
+    <div id="max" class="info-container">
+        <img class="info-img" src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg" alt="Max the Beagle">
+        <h2>Max (Beagle)</h2>
+        <p><b>Age:</b> 1.5 years</p>
+        <p><b>Gender:</b> Male</p>
+        <p><b>Breed:</b> Beagle</p>
+        <p><b>Description:</b> Max is playful, curious, and very affectionate. He enjoys walks and loves to explore.</p>
+        <p><b>Behavior:</b> Playful, curious, loves to sniff, gentle temperament.</p>
+        <p><b>Training:</b> Semi-trained; responds to 'sit' and 'come'.</p>
+        <ul>
+            <li>Vaccinated</li>
+            <li>Dewormed</li>
+            <li>No known health issues</li>
+            <li>Favorite activity: Outdoor games</li>
+            <li>Special note: Great with children</li>
+        </ul>
+        <button class="back-btn" onclick="goBack()">Back to Portal</button>
+    </div>
+    <div id="rosie" class="info-container">
+        <img class="info-img" src="https://animatch.ca/cdn/shop/files/Rosie-2.jpg?v=1749508119&width=800">
+        <h2>Rosie (Golden Retriever)</h2>
+        <p><b>Age:</b> 2.5 years</p>
+        <p><b>Gender:</b> Female</p>
+        <p><b>Breed:</b> Golden Retriever</p>
+        <p><b>Description:</b> Rosie is sweet-natured and gentle. She adapts well to families and loves cuddles.</p>
+        <p><b>Behavior:</b> Sweet-natured, gentle, loves cuddles, well mannered.</p>
+        <p><b>Training:</b> Trained for basic obedience and house manners.</p>
+        <ul>
+            <li>Vaccinated</li>
+            <li>Microchipped</li>
+            <li>No allergies</li>
+            <li>Favorite activity: Family time</li>
+            <li>Special note: Very patient</li>
+        </ul>
+        <button class="back-btn" onclick="goBack()">Back to Portal</button>
+    </div>
+    <div id="bella" class="info-container">
+        <img class="info-img" src="https://images.pexels.com/photos/374906/pexels-photo-374906.jpeg" alt="Bella the Siberian Husky">
+        <h2>Bella (Siberian Husky)</h2>
+        <p><b>Age:</b> 2 years</p>
+        <p><b>Gender:</b> Female</p>
+        <p><b>Breed:</b> Siberian Husky</p>
+        <p><b>Description:</b> Bella is playful and loves to run. She has a beautiful coat and striking blue eyes.</p>
+        <p><b>Behavior:</b> Playful, energetic, loves cool weather, gets along with other dogs.</p>
+        <p><b>Training:</b> Leash trained, responds to 'sit' and 'stay'.</p>
+        <ul>
+            <li>Vaccinated</li>
+            <li>Dewormed</li>
+            <li>No major health issues</li>
+            <li>Favorite activity: Running</li>
+            <li>Special note: Loves snow & chilly mornings</li>
+        </ul>
+        <button class="back-btn" onclick="goBack()">Back to Portal</button>
+    </div>
+    <script>
+        function showDogInfo(dog) {
+            document.getElementById("mainPage").classList.remove('active');
+            document.getElementById("mainPage").classList.add('inactive');
+            document.getElementById(dog).classList.add('active');
+        }
+        function goBack() {
+            var infos = document.querySelectorAll('.info-container');
+            infos.forEach(e=>e.classList.remove('active'));
+            document.getElementById("mainPage").classList.remove('inactive');
+            document.getElementById("mainPage").classList.add('active');
+        }
+    </script>
+</body>
+</html>
